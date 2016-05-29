@@ -1,0 +1,13 @@
+# Node build artifacts
+node_modules
+npm-debug.log
+.idea
+.build
+
+# Local development
+*.env
+*.dev
+.DS_Store
+Frontend/styles/base
+Frontend/styles/bourbon
+Frontend/styles/neat
