@@ -10,7 +10,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const WebpackAnybarPlugin = require('webpack-anybar-plugin').default;
 const server = require('./server');
 
-const clientPath    = path.join(__dirname, '../Application');
+const clientPath    = path.join(__dirname, '../');
 const stylePath     = path.join(__dirname, '../Styles');
 const staticPath    = path.join(__dirname, '../Static');
 const buildPath     = path.join(__dirname, '../.build');
@@ -31,7 +31,7 @@ module.exports = (function () {
         entry: [
             `webpack-dev-server/client?http://0.0.0.0:${server.port}`, // WebpackDevServer host and port
             'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-            path.join(clientPath, '/index') // Your appʼs entry point
+            path.join(clientPath, 'Application', '/index') // Your appʼs entry point
         ],
         output: {
             path: buildPath,
@@ -46,20 +46,24 @@ module.exports = (function () {
             alias: {
                 style:          stylePath,
                 images:         path.join(staticPath, 'images'),
-                mixins:         path.join(clientPath, 'mixins'),
-                classes:        path.join(clientPath, 'classes'),
-                components:     path.join(clientPath, 'components'),
-                actions:        path.join(clientPath, 'actions'),
-                reducers:       path.join(clientPath, 'reducers'),
+                root:           path.join(clientPath, 'Application'),
+                mixins:         path.join(clientPath, 'Mixins'),
+                classes:        path.join(clientPath, 'Classes'),
+                components:     path.join(clientPath, 'Components'),
             }
         },
         module: {
             loaders: [
                 {
                     test: /\.(js|jsx?)$/,
-                    loaders: ['react-hot', 'babel'],
+                    loaders: ['babel'],
                     include: clientPath,
                     exclude: [/node_modules/, /webpack/, /Styles/, /Static/]
+                },
+                {
+                    test: /\.(pug|jade)$/,
+                    loaders: ['jade-react'],
+                    include: path.join(clientPath, 'Components')
                 },
                 {
                     test: /\.scss$/,

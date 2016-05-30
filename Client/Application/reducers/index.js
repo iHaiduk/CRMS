@@ -3,30 +3,11 @@
  */
 'use strict';
 
-function getId(state) {
-    return state.todos.reduce((maxId, todo) => {
-            return Math.max(todo.id, maxId)
-        }, -1) + 1
-}
+import { combineReducers } from 'redux'
+import todoReducer from 'components/Navigation/reducers'
 
+const rootReducer = combineReducers({
+    todos: todoReducer
+});
 
-export default function reducer(state, actions) {
-
-    switch (actions.type) {
-
-        case 'ADD_TODO':
-
-            return Object.assign({}, state, {
-                todos: [...state.todos, {
-                    text: actions.text,
-                    completed: false,
-                    id: getId(state)
-                }]
-            });
-
-        default:
-            return state;
-
-    }
-
-}
+export default rootReducer

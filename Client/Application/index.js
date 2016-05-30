@@ -6,9 +6,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux'
-import configureStore from 'stores/index'
-import Navigation from 'components/navbar'
-import styles from 'style/main.scss';
+import configureStore from 'root/store'
+import Navigation from 'components/Navigation'
 
 const body          = document.body;
 const rootElement   = document.createElement('div');
@@ -21,16 +20,13 @@ let initialState = {
     }]
 }
 
-let store = configureStore(initialState)
+let store = configureStore(initialState);
 
 body.appendChild(rootElement);
 
 ReactDOM.render(
     <Provider store={store}>
-        <div className={styles.test}>
-            <Navigation />
-            Hello world
-        </div>
+        <Navigation />
     </Provider>,
     rootElement
 );
