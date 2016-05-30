@@ -18,7 +18,7 @@ let initialState = {
         completed: false,
         text: 'Initial todo for demo purposes'
     }]
-}
+};
 
 let store = configureStore(initialState);
 
@@ -30,19 +30,3 @@ ReactDOM.render(
     </Provider>,
     rootElement
 );
-
-/*
-
-// react-hot-loader 3 specific - rerender AppContainer
-// in case of problems with react-router, check this issue:
-// https://github.com/gaearon/react-hot-loader/issues/249
-if (module.hot) {
-    module.hot.accept('./containers/Root', () => {
-        ReactDOM.render(
-            <AppContainer />,
-            rootElement
-        );
-    });
-}*/
-
-
