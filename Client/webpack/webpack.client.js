@@ -23,11 +23,12 @@ const server_webpack = {
 
 module.exports = (function () {
 
-    return {
+    let config = {
         target: 'web',
+        debug: true,
         context: __dirname,
         cache: true,
-        devtool: 'source-map',
+        devtool: 'cheap-module-eval-source-map',
         entry: [
             `webpack-dev-server/client?http://0.0.0.0:${server.port}`, // WebpackDevServer host and port
             'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
@@ -56,7 +57,7 @@ module.exports = (function () {
             loaders: [
                 {
                     test: /\.(js|jsx?)$/,
-                    loaders: ['babel'],
+                    loader: 'babel',
                     include: clientPath,
                     exclude: [/node_modules/, /webpack/, /Styles/, /Static/]
                 },
@@ -68,8 +69,8 @@ module.exports = (function () {
                 {
                     test: /\.scss$/,
                     loaders: [
-                        'style',
-                        'css?modules&camelCase&importLoaders=1&allowMultiple=true',
+                        'style?sourceMap',
+                        'css?modules&camelCase&importLoaders=1&allowMultiple=true&localIdentName=[name]---[local]',
                         'postcss-loader',
                         'sass?sourceMap'
                     ],
@@ -145,5 +146,9 @@ module.exports = (function () {
         },
 
         watch: true
-    }
+    };
+
+    return config;
+
+
 })();
