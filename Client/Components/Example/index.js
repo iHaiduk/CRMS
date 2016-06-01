@@ -11,20 +11,21 @@ import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
+import styles from "style/components/_navigation.scss";
 
 
 @CSSModules(styles, { allowMultiple: true })
-class Navigation extends Component() {
+class Example extends Component() {
 
     constructor(props, context) {
         super(props, context);
     }
 
     render() {
-
+        
         return this.generateTemplate();
 
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Navigation);
+export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Example);

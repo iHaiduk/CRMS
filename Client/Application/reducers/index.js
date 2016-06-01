@@ -4,9 +4,11 @@
 'use strict';
 
 import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux';
 import todoReducer from 'components/Navigation/reducers'
 
 const rootReducer = combineReducers({
+    routing: routerReducer,
     todos: todoReducer
 });
 

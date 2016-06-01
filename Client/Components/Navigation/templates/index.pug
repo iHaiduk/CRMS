@@ -23,7 +23,11 @@ nav(role='navigation', block='className')
                 size: 'big'
             }
         )
-            span(showText)= 'hjkghjk'
+            if(state != null)
+                #{state.components.Link}(
+                    to="/bar"
+                )
+                    span(showText)= 'hjkghjk'
 
         div(
             elem= 'cat',
@@ -33,6 +37,7 @@ nav(role='navigation', block='className')
             }
         )
             span(showText)= 'hjkghjk'
+
     ul
         if(props.todos.length)
             each item in props.todos

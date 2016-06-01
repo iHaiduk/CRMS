@@ -4,10 +4,10 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux'
 import configureStore from 'root/store'
-import Navigation from 'components/Navigation'
+
+import Rout from 'router'
 
 const body          = document.body;
 const rootElement   = document.createElement('div');
@@ -21,12 +21,13 @@ let initialState = {
 };
 
 let store = configureStore(initialState);
+let Router = Rout(store);
 
 body.appendChild(rootElement);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Navigation />
+        <Router />
     </Provider>,
     rootElement
 );

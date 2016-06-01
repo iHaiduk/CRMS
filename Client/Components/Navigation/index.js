@@ -6,12 +6,14 @@
 import React from "react";
 import CSSModules from "react-css-modules";
 import Component from "classes/Component";
-import styles from "style/components/_navigation.scss";
 import { connect } from "react-redux";
 import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
+import styles from "style/components/_navigation.scss";
+
+import { Link, browserHistory } from 'react-router'
 
 
 @CSSModules(styles, { allowMultiple: true })
@@ -19,6 +21,12 @@ class Navigation extends Component() {
 
     constructor(props, context) {
         super(props, context);
+        
+        this.state = {
+            components:{
+                Link: Link
+            }
+        }
     }
 
     componentDidMount(){

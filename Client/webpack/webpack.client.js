@@ -51,6 +51,7 @@ module.exports = (function () {
                 mixins:         path.join(clientPath, 'Mixins'),
                 classes:        path.join(clientPath, 'Classes'),
                 components:     path.join(clientPath, 'Components'),
+                router:         path.join(clientPath, 'Router'),
             }
         },
         module: {

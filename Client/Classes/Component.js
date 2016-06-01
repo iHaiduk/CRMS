@@ -18,14 +18,16 @@ const Component = (components = []) => {
         
         return function(data){
 
-            const templateName = component.state && component.state.template ? component.state.template : 'index';
-            let template = require(`Components/${component.__proto__.constructor.displayName}/templates/${templateName}.pug`);
+            const   templateName = component.state && component.state.template ? component.state.template : 'index',
+                    template = require(`Components/${component.__proto__.constructor.displayName}/templates/${templateName}.pug`);
+
             const properties = assign({
                 state: component.state,
                 props: component.props,
                 actions: component.actions
             }, data);
-            
+
+
             return BEML.convert(template(properties));
 
         }

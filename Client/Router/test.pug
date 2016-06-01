@@ -1,0 +1,17 @@
+div
+    h1 Users
+    header
+        | Links:
+        | {' '}
+        link(to='/')
+        | Home
+        |                     {' '}
+        link(to='/foo')
+        | Foo
+        |                     {' '}
+        link(to='/bar')
+        | Bar
+    div
+        button(onclick='{()')  browserHistory.push('/foo')}>Go to /foo
+    div(classname='detail')
+        | {this.props.children}
