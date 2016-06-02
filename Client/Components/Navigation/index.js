@@ -31,10 +31,10 @@ class Navigation extends Component() {
 
     componentDidMount(){
         let self = this;
-        /*setInterval(() =>
+        setInterval(() =>
         {
-            self.props.actions.addTodo('Text: ' + self.props.todos.length);
-        }, 3000);*/
+            self.props.actions.addTodo('Text: ' + (parseInt(this.props.todos.size) + 1));
+        }, 3000);
     }
 
     render() {

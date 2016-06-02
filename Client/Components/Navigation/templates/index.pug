@@ -1,11 +1,11 @@
 mixin list_item(data)
     li(
-        key= data.id
+        key= data.get('id')
     )
         span(
             showText
 
-        )= data.text
+        )= data.get('text')
 
 nav(role='navigation', block='className')
     div(block='otherClassName')
@@ -39,6 +39,6 @@ nav(role='navigation', block='className')
             span(showText)= 'hjkghjk'
 
     ul
-        if(props.todos.length)
-            each item in props.todos
-                +list_item(item)
+        - props.todos.map(function(todo){
+            +list_item(todo)
+        - })

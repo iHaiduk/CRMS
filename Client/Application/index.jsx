@@ -12,15 +12,8 @@ import Rout from 'router'
 const body          = document.body;
 const rootElement   = document.createElement('div');
 
-let initialState = {
-    todos: [{
-        id: 0,
-        completed: false,
-        text: 'Initial todo for demo purposes'
-    }]
-};
 
-let store = configureStore(initialState);
+let store = configureStore();
 let Router = Rout(store);
 
 body.appendChild(rootElement);

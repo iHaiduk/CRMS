@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import invariant from 'redux-immutable-state-invariant';
 import reducer from 'root/reducers';
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState = {}) {
     const store = createStore(reducer, initialState, compose(
         applyMiddleware(invariant(), thunk),
         window.devToolsExtension ? window.devToolsExtension() : f => f
