@@ -12,7 +12,6 @@ import Rout from 'router'
 const body          = document.body;
 const rootElement   = document.createElement('div');
 
-
 let store = configureStore();
 let Router = Rout(store);
 

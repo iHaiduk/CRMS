@@ -3,7 +3,7 @@
  */
 'use strict';
 
-import React from "react";
+import React, { PropTypes } from 'react'
 import CSSModules from "react-css-modules";
 import Component from "classes/Component";
 import { connect } from "react-redux";
@@ -16,25 +16,24 @@ import styles from "style/components/_navigation.scss";
 import { Link, browserHistory } from 'react-router'
 
 
+@connect(state => state, dispatch => { return { actions: bindActionCreators(actions, dispatch) } } )
 @CSSModules(styles, { allowMultiple: true })
 class Navigation extends Component() {
 
     constructor(props, context) {
         super(props, context);
         
-        this.state = {
-            components:{
-                Link: Link
-            }
-        }
+        this.childComponents = [ Link ];
+        this.state = {}
     }
 
     componentDidMount(){
         let self = this;
-        setInterval(() =>
+        console.log(self)
+        /*setInterval(() =>
         {
             self.props.actions.addTodo('Text: ' + (parseInt(this.props.todos.size) + 1));
-        }, 3000);
+        }, 3000);*/
     }
 
     render() {
@@ -44,4 +43,8 @@ class Navigation extends Component() {
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Navigation);
+/*Navigation.propTypes = {
+    childComponents: PropTypes.array.isRequired
+};*/
+
+export default Navigation;

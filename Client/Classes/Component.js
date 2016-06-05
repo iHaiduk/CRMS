@@ -14,9 +14,15 @@ const Component = (components = []) => {
 
     class Style extends mix(...components) {}
 
+    function capitalizeFirstLetter(string) {
+        return string[0].toUpperCase() + string.slice(1);
+    }
+
     let preRender = function(component) {
         
         return function(data){
+
+            if(component == undefined) return null;
 
             const   templateName = component.state && component.state.template ? component.state.template : 'index',
                     template = require(`Components/${component.__proto__.constructor.displayName}/templates/${templateName}.pug`);
@@ -27,6 +33,11 @@ const Component = (components = []) => {
                 actions: component.actions
             }, data);
 
+            if(component && component.childComponents instanceof Array) {
+                component.childComponents.forEach( val => {
+                    properties[capitalizeFirstLetter(String(val.displayName))] = val;
+                })
+            }
 
             return BEML.convert(template(properties));
 

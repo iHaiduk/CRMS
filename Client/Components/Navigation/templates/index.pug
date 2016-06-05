@@ -23,11 +23,10 @@ nav(role='navigation', block='className')
                 size: 'big'
             }
         )
-            if(state != null)
-                #{state.components.Link}(
-                    to="/bar"
-                )
-                    span(showText)= 'hjkghjk'
+            #{Link}(
+                to="/bar"
+            )
+                span(showText)= 'hjkghjk'
 
         div(
             elem= 'cat',
@@ -41,4 +40,5 @@ nav(role='navigation', block='className')
     ul
         - props.todos.map(function(todo){
             +list_item(todo)
-        - })
+        - });
+
