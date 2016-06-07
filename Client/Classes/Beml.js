@@ -45,7 +45,9 @@ class BEML {
 
         if(props != undefined && (props.hasOwnProperty('block') || props.hasOwnProperty('elem') || props.hasOwnProperty('mod'))){
             let blockName = block || props.block;
-            styleNameGenerate.push(blockName);
+            if(!(props.hasOwnProperty('elem') || props.hasOwnProperty('mod'))) {
+                styleNameGenerate.push(blockName);
+            }
             let nameElement = template.props && typeof template.props.elem == 'string' ? `${blockName}${this.config.elemPrefix}${template.props.elem}` : null;
             if(nameElement != null) styleNameGenerate.push(nameElement);
 
