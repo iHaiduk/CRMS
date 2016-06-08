@@ -5,20 +5,24 @@
 
 import React from "react";
 import CSSModules from "react-css-modules";
-import { Component } from "classes/Component";
+import { Group } from "classes/Component";
 import { connect } from "react-redux";
 import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
-//import styles from "style/components/_navigation.scss";
+import styles from "./css/index.scss";
 
+import Table from 'components/Table';
+import Pager from 'components/Pager';
 
-@CSSModules({}, { allowMultiple: true })
-class Example extends Component() {
+@CSSModules(styles, { allowMultiple: true })
+class Customers extends Group() {
 
     constructor(props, context) {
         super(props, context);
+
+        this.childComponents = [ Table, Pager ];
     }
 
     render() {
@@ -28,4 +32,4 @@ class Example extends Component() {
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Example);
+export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Customers);

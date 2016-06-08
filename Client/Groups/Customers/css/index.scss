@@ -1,0 +1,9 @@
+.customer{
+
+  composes: desktop from 'sass!style/section/_structure.scss';
+
+  &__pager {
+    background: black;
+  }
+
+}

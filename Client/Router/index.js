@@ -3,9 +3,10 @@
  */
 
 import React from 'react';
-import Component from "classes/Component";
+import { Component } from "classes/Component";
 
 import Navigation from 'components/Navigation'
+import Customers from 'groups/Customers'
 import Example from 'components/Example'
 
 
@@ -29,6 +30,7 @@ export default function(store){
                 <Route path="/" component={Test}>
                     <Route path="foo" component={Navigation}/>
                     <Route path="bar" component={Example}/>
+                    <Route path="table" component={Customers}/>
                 </Route>
             </Router>;
 

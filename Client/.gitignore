@@ -8,6 +8,3 @@ npm-debug.log
 *.env
 *.dev
 .DS_Store
-Frontend/styles/base
-Frontend/styles/bourbon
-Frontend/styles/neat

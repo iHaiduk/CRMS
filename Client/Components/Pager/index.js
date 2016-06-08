@@ -11,11 +11,12 @@ import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
-//import styles from "style/components/_navigation.scss";
+import styles from "./css/index.scss";
 
+console.log(styles, Component())
 
-@CSSModules({}, { allowMultiple: true })
-class Example extends Component() {
+@CSSModules(styles, { allowMultiple: true })
+class Pager extends Component() {
 
     constructor(props, context) {
         super(props, context);
@@ -28,4 +29,4 @@ class Example extends Component() {
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Example);
+export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Pager);

@@ -5,13 +5,13 @@
 
 import React, { PropTypes } from 'react'
 import CSSModules from "react-css-modules";
-import Component from "classes/Component";
+import { Component } from "classes/Component";
 import { connect } from "react-redux";
 import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
-import styles from "style/components/_navigation.scss";
+import styles from "./css/index.scss";
 
 import { Link, browserHistory } from 'react-router'
 

@@ -1,0 +1,22 @@
+.pager{
+  display: inline-block;
+  box-shadow: inset 0 -1px 0 #d6dbdf;
+  &__item{
+    display: inline-block;
+    &_active{
+      .pager__link{
+        @extend .pager__link:hover;
+      }
+    }
+  }
+  &__link{
+    display: inline-block;
+    text-decoration: none;
+    color: #525e66;
+    padding: 15px;
+    &:hover{
+      color: #ff3377;
+      border-bottom: 1px solid currentColor;
+    }
+  }
+}

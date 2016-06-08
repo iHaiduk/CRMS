@@ -11,14 +11,18 @@ import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
-//import styles from "style/components/_navigation.scss";
+import styles from "./css/index.scss";
 
 
-@CSSModules({}, { allowMultiple: true })
-class Example extends Component() {
+@CSSModules(styles, { allowMultiple: true })
+class Table extends Component() {
 
     constructor(props, context) {
         super(props, context);
+
+        /*this.state = {
+            template: 'index2'
+        };*/
     }
 
     render() {
@@ -28,4 +32,4 @@ class Example extends Component() {
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Example);
+export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Table);

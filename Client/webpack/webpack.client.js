@@ -51,6 +51,7 @@ module.exports = (function () {
                 mixins:         path.join(clientPath, 'Mixins'),
                 classes:        path.join(clientPath, 'Classes'),
                 components:     path.join(clientPath, 'Components'),
+                groups:         path.join(clientPath, 'Groups'),
                 router:         path.join(clientPath, 'Router'),
             }
         },
@@ -65,7 +66,8 @@ module.exports = (function () {
                 {
                     test: /\.(pug|jade)$/,
                     loaders: ['jade-react'],
-                    include: path.join(clientPath, 'Components')
+                    include: path.join(clientPath),
+                    exclude: [/node_modules/, /webpack/, /Styles/, /Static/]
                 },
                 {
                     test: /\.scss$/,
@@ -91,7 +93,7 @@ module.exports = (function () {
 
         sassLoader: {
             data: "$env: " + (process.env.NODE_ENV || 'development') + ";",
-            includePaths: [stylePath]
+            includePaths: [stylePath, clientPath]
         },
 
         postcss: function () {

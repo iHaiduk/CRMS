@@ -1,9 +1,13 @@
 /**
  * Created by user on 6/1/2016.
  */
-import React, { Component } from 'react'
-import { Link, browserHistory } from 'react-router'
+import React, { Component } from 'react';
+import { Link, browserHistory } from 'react-router';
+import CSSModules from "react-css-modules";
 
+import styles from "style/_main.scss";
+
+@CSSModules(styles, { allowMultiple: true })
 class App extends Component {
     render() {
         return (
@@ -17,6 +21,10 @@ class App extends Component {
                     <Link to="/foo">Foo</Link>
                     {' '}
                     <Link to="/bar">Bar</Link>
+                    {' '}
+                    <Link to="/table">Table</Link>
+                    {' '}
+                    <Link to="/pager">Pager</Link>
                 </header>
                 <div>
                     <button onClick={() => browserHistory.push('/foo')}>Go to /foo</button>
