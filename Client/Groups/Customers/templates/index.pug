@@ -1,9 +1,12 @@
 div(block='customer')
-    div
-        h1(showText) Customers
-    div
+    div(elem='wrap')
+        div(elem='form')
+            #{SearchForm}
+        h1(elem='title')
+            span(showText) Customers
 
-    div
+    div(elem='table')
         #{Table}
+
     div(elem='pager')
         #{Pager}

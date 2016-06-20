@@ -1,0 +1,21 @@
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  box-shadow: 0 0 20px rgba(0,0,0,.03);
+  background: #fff;
+  padding: 48px 0 52px;
+  display: flex;
+  flex-direction: column;
+  &__wrap{
+    flex: 1;
+  }
+  &__logo{
+    padding: 0 30px;
+  }
+  &__profile{
+    padding: 0 30px;
+  }
+}

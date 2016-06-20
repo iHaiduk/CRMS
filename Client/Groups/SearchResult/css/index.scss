@@ -1,0 +1,41 @@
+.search-result {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  right: -1px;
+  background: #fff;
+  border: 1px solid #dae1e6;
+  border-radius: 6px;
+  margin-top: 10px;
+  overflow: hidden;
+  display: none;
+  &__title{
+    padding: 15px 18px;
+    background: #fafafa;
+  }
+  &__wrap{
+    padding: 16px 8px;
+  }
+  &__modifiers{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    &:after{
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: #edf0f2;
+      margin-left: 20px;
+    }
+  }
+  .list{
+    li{
+      padding: 6px 10px;
+      border-radius: 3px;
+      &:hover{
+        background: #fafafa;
+      }
+    }
+  }
+}

@@ -13,43 +13,20 @@ div(block='table' mod={header:true})
         div(elem='cell')
             span(showText) Expiry
 
+
 div(block='table')
-    div(elem='row')
-        div(elem='cell')
-            a(href='#' showText) Michel Bay
-        div(elem='cell')
-            span(showText) jacobson_gregoria@yahoo.com
-        div(elem='cell')
-            a(href='#' showText) 4785634
-        div(elem='cell')
-            a(href='#' showText) fivemillionpixels.com
-        div(elem='cell')
-            span(showText)= 'Business'
-        div(elem='cell')
-            span(showText)= '14 Mar, 2019'
-    div(elem='row')
-        div(elem='cell')
-            a(href='#' showText) Michel Bay
-        div(elem='cell')
-            span(showText) jacobson_gregoria@yahoo.com
-        div(elem='cell')
-            a(href='#' showText) 4785634
-        div(elem='cell')
-            a(href='#' showText) fivemillionpixels.com
-        div(elem='cell')
-            span(showText)= 'Business'
-        div(elem='cell')
-            span(showText)= '14 Mar, 2019'
-    div(elem='row')
-        div(elem='cell')
-            a(href='#' showText) Michel Bay
-        div(elem='cell')
-            span(showText) jacobson_gregoria@yahoo.com
-        div(elem='cell')
-            a(href='#' showText) 4785634
-        div(elem='cell')
-            a(href='#' showText) fivemillionpixels.com
-        div(elem='cell')
-            span(showText)= 'Business'
-        div(elem='cell')
-            span(showText)= '14 Mar, 2019'
+        - for(var i=0; i < 15; i++)
+
+            div(elem='row')
+                div(elem='cell')
+                    a(href='#' showText) Michel Bay
+                div(elem='cell')
+                    span(showText) jacobson_gregoria@yahoo.com
+                div(elem='cell')
+                    a(href='#' showText) 4785634
+                div(elem='cell')
+                    a(href='#' showText) fivemillionpixels.com
+                div(elem='cell')
+                    span(showText)= 'Business'
+                div(elem='cell')
+                    span(showText)= '14 Mar, 2019'

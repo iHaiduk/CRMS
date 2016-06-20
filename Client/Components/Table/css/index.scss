@@ -1,9 +1,14 @@
 .table{
   background: #fff;
   padding: 0 20px;
-  box-shadow: 0 0 15px rgba(#000, .1);
   &_header{
     text-transform: uppercase;
+    margin-bottom: 2px;
+    .table__row{
+      &:hover{
+        background: none;
+      }
+    }
   }
   a{
     color: #218fd9;
@@ -14,7 +19,10 @@
     width: 100%;
     padding: 20px;
     border-bottom: 1px solid #edf0f2;
-    border-radius: 3px;
+    border-radius: 2px;
+    &:last-child{
+      border-bottom: 0;
+    }
     &:hover{
       background: #edf0f2;
       a{

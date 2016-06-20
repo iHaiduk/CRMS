@@ -13,19 +13,15 @@ import { bindActionCreators } from 'redux'
 import actions from './actions';
 import styles from "./css/index.scss";
 
-import Table from 'components/Table';
-import Pager from 'components/Pager';
-import Input from 'components/Input';
 import List from 'components/List';
-import SearchForm from 'groups/SearchForm';
 
 @CSSModules(styles, { allowMultiple: true })
-class Customers extends Group() {
+class SearchResult extends Group() {
 
     constructor(props, context) {
         super(props, context);
 
-        this.childComponents = [ Table, Pager, Input, List, SearchForm ];
+        this.childComponents = [ List ];
     }
 
     render() {
@@ -35,4 +31,4 @@ class Customers extends Group() {
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Customers);
+export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(SearchResult);

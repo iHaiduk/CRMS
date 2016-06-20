@@ -1,0 +1,28 @@
+.profile{
+  display: flex;
+  font-weight: 500;
+  color: #000;
+  &__name{
+    flex: 1;
+  }
+  &__arrow{
+    margin-left: 7px;
+  }
+  &__bell{
+    position: relative;
+    &_active{
+      color: red;
+      &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5px;
+        height: 5px;
+        background: #f1575d;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #f1575d;
+      }
+    }
+  }
+}

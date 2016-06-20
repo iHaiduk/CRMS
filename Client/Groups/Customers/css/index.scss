@@ -1,9 +1,22 @@
 .customer{
-
-  composes: desktop from 'sass!style/section/_structure.scss';
-
-  &__pager {
-    background: black;
+  max-width: 1410px;
+  margin: 0 auto;
+  &__wrap{
+    margin-bottom: 70px;
+    composes: clearfix from 'sass!style/defaults/_additional.scss';
   }
-
+  &__title{
+    font-size: 30px;
+    font-weight: 400;
+  }
+  &__table{
+    box-shadow: 0 0 20px rgba(0,0,0,.03);
+    margin-bottom: 32px;
+  }
+  &__pager {
+    padding: 0 30px;
+  }
+  &__form{
+    float: right;
+  }
 }

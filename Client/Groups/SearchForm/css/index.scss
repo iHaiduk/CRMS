@@ -1,0 +1,23 @@
+.search-form {
+  width: 338px;
+  background: #fff;
+  border: 1px solid #ff3377;
+  border-radius: 3px;
+  padding: 7px 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__text {
+    color: #000;
+    flex: 1;
+  }
+  &__ico{
+    color: red;
+  }
+  &__close{
+    color: #000;
+  }
+  &__result{
+    color: #000;
+  }
+}

@@ -25,6 +25,10 @@ class App extends Component {
                     <Link to="/table">Table</Link>
                     {' '}
                     <Link to="/pager">Pager</Link>
+                    {' '}
+                    <Link to="/searchForm">Search</Link>
+                    {' '}
+                    <Link to="/sidebar">Sidebar</Link>
                 </header>
                 <div>
                     <button onClick={() => browserHistory.push('/foo')}>Go to /foo</button>

@@ -5,7 +5,7 @@
 
 import React from "react";
 import CSSModules from "react-css-modules";
-import { Group } from "classes/Component";
+import { Component } from "classes/Component";
 import { connect } from "react-redux";
 import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
@@ -13,19 +13,12 @@ import { bindActionCreators } from 'redux'
 import actions from './actions';
 import styles from "./css/index.scss";
 
-import Table from 'components/Table';
-import Pager from 'components/Pager';
-import Input from 'components/Input';
-import List from 'components/List';
-import SearchForm from 'groups/SearchForm';
 
 @CSSModules(styles, { allowMultiple: true })
-class Customers extends Group() {
+class List extends Component() {
 
     constructor(props, context) {
         super(props, context);
-
-        this.childComponents = [ Table, Pager, Input, List, SearchForm ];
     }
 
     render() {
@@ -35,4 +28,4 @@ class Customers extends Group() {
     }
 }
 
-export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(Customers);
+export default connect((state) => state, (dispatch) => { return { actions: bindActionCreators(actions, dispatch) } } )(List);

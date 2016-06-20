@@ -11,10 +11,10 @@ import { autobind } from "core-decorators";
 import { bindActionCreators } from 'redux'
 
 import actions from './actions';
-//import styles from "style/components/_navigation.scss";
+import styles from "./css/index.scss";
 
 
-@CSSModules({}, { allowMultiple: true })
+@CSSModules(styles, { allowMultiple: true })
 class Example extends Component() {
 
     constructor(props, context) {
